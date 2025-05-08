@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Gallery</title>
+  <link rel="stylesheet" href="style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italianno&family=Yellowtail&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="audio/lagu.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <h1>Our Gallery</h1>
+  <h4>hai jennifer most beautiful girl on the earth</h4>
+  
+  <div class="gallery">
+    <img src="images/foto15.jpg" alt="Foto 1">
+    <img src="images/foto39.jpg" alt="Foto 2">
+    <img src="images/foto20.jpg" alt="Foto 3">
+    <img src="images/foto9.jpg" alt="Foto 3">
+    <img src="images/foto50.jpg" alt="Foto 3">
+    <img src="images/foto33.jpg" alt="Foto 3">
+    <img src="images/foto49.jpg" alt="Foto 3">
+    <img src="images/foto51.jpg" alt="Foto 3">
+    <!-- Tambah lebih banyak foto sesuai nama file di folder images -->
+  </div>
+
+  <!-- Ornamen Bubbles -->
+<div class="decorations">
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+</div>
+
+<div class="music-player">
+  <button onclick="toggleMusic()">🎵 Play / 🔇Pause</button>
+  <audio id="bgMusic" loop>
+    <source src="audio/lagu.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+
+  <script>
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        const heart = document.createElement('div');
+        heart.className = 'floating-heart';
+        heart.innerText = '❤️';
+        heart.style.left = `${Math.random() * 80 + 10}%`;
+        heart.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 2000);
+      });
+    });
+
+    const music = document.getElementById('bgMusic');
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
+  </script>
+  <i><h6><center>Kidung Agung 4:7
+            <p>-Engkau cantik sekali, manisku, tak ada cacat cela padamu</p>
+  </center></h6></i>
+</body>
+</html>
